@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: rest-kotlin
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rest_kotlin?useTimezone=true&serverTimeZone=UTC
+    username: root
+    password: Teste123.
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
