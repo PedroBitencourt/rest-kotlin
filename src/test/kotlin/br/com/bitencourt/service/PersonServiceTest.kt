@@ -3,7 +3,7 @@ package br.com.bitencourt.service
 
 import br.com.bitencourt.domain.dto.request.PersonCreateRequest
 import br.com.bitencourt.domain.dto.request.PersonUpdateRequest
-import br.com.bitencourt.domain.entity.Person
+import br.com.bitencourt.application.core.domain.Person
 import br.com.bitencourt.exception.ResourceNotFoundException
 import br.com.bitencourt.repository.PersonRepository
 import br.com.bitencourt.utils.PersonUtils.Companion.listOfPerson

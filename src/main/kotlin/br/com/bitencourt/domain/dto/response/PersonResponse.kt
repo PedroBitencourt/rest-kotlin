@@ -1,6 +1,6 @@
 package br.com.bitencourt.domain.dto.response
 
-import br.com.bitencourt.domain.entity.Person
+import br.com.bitencourt.application.core.domain.Person
 
 data class PersonResponse(
     val id: Long,

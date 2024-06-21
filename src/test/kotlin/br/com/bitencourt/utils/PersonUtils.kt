@@ -1,6 +1,6 @@
 package br.com.bitencourt.utils
 
-import br.com.bitencourt.domain.entity.Person
+import br.com.bitencourt.application.core.domain.Person
 
 class PersonUtils {
 

@@ -1,10 +1,10 @@
-package br.com.bitencourt.domain.entity
+package br.com.bitencourt.application.core.domain
 
 import jakarta.persistence.*
 
 @Entity
 @Table(name = "person")
-class Person (@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0,
+data class Person (@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0,
 
               @Column(name = "first_name", nullable = false)
               var firstName: String = "",
@@ -13,7 +13,7 @@ class Person (@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Lo
               var lastName: String = "",
 
               @Column
-              var address: String = "",
+              var address: Address,
 
               @Column
               var phone: String = "")
