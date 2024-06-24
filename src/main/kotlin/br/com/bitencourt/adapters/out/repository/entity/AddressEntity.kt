@@ -6,7 +6,7 @@ import jakarta.persistence.*
 @Entity
 @Table(name = "address")
 data class AddressEntity(
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long = 0,
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = 0,
     @Column
     val street: String,
     @Column
@@ -17,8 +17,7 @@ data class AddressEntity(
     val city: String,
     @Column
     val state: String,
-    @OneToOne
-    val personId: PersonEntity? = null) {
+    ) {
 
-    constructor(address: Address): this(address.id!!, address.street, address.zipCode, address.neighborhood, address.city, address.state)
+    constructor(address: Address) : this(address.id, address.street, address.zipCode, address.neighborhood, address.city, address.state)
 }

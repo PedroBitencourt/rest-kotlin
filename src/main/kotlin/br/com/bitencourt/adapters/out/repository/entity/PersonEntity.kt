@@ -5,7 +5,7 @@ import jakarta.persistence.*
 
 @Entity
 @Table(name = "person")
-data class PersonEntity(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long = 0,
+data class PersonEntity(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = 0,
 
                         @Column(name = "first_name", nullable = false)
                         val firstName: String = "",
@@ -19,5 +19,5 @@ data class PersonEntity(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
 
                         @Column
                         val phone: String = "") {
-    constructor(person: Person): this(person.id!!, person.firstName, person.lastName, AddressEntity(person.address!!), person.phone)
+    constructor(person: Person): this(person.id, person.firstName, person.lastName, AddressEntity(person.address!!), person.phone)
 }
