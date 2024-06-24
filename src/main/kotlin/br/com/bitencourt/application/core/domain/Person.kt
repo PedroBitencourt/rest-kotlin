@@ -2,18 +2,12 @@ package br.com.bitencourt.application.core.domain
 
 import jakarta.persistence.*
 
-@Entity
-@Table(name = "person")
-data class Person (@Id @GeneratedValue(strategy = GenerationType.IDENTITY) var id: Long = 0,
+data class Person (val id: Long? = null,
 
-              @Column(name = "first_name", nullable = false)
-              var firstName: String = "",
+              val firstName: String,
 
-              @Column(name = "last_name", nullable = false)
-              var lastName: String = "",
+              val lastName: String,
 
-              @Column
-              var address: Address,
+              var address: Address? = null,
 
-              @Column
-              var phone: String = "")
+              val phone: String)

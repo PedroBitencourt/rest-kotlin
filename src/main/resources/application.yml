@@ -13,4 +13,4 @@ spring:
 correios:
   client:
     address:
-      url: http://localhost:8082/addresses
+      url: https://brasilapi.com.br/api/cep/v1
