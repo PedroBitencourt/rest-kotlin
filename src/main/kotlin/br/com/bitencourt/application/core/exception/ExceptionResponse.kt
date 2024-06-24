@@ -1,4 +1,4 @@
-package br.com.bitencourt.exception
+package br.com.bitencourt.application.core.exception
 
 import java.util.Date
 

@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component
 @Component
 class InsertPersonAdapter(private val personRepository: PersonRepository, private val addressRepository: AddressRepository): InsertPersonOutPutPort {
     override fun insert(person: Person) {
-        var entity = PersonEntity(person)
+        val entity = PersonEntity(person)
         personRepository.save(entity)
-        addressRepository.save(entity.address)
+        entity.address?.let { addressRepository.save(it) }
     }
 }

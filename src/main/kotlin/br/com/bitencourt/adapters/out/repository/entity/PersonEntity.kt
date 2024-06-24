@@ -15,9 +15,11 @@ data class PersonEntity(@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
 
                         @OneToOne(cascade = [CascadeType.ALL])
                         @JoinColumn(name = "address_id", referencedColumnName = "id")
-                        val address: AddressEntity,
+                        val address: AddressEntity? = null,
 
                         @Column
                         val phone: String = "") {
     constructor(person: Person): this(person.id, person.firstName, person.lastName, AddressEntity(person.address!!), person.phone)
+
+    fun toPerson() = Person(id, firstName, lastName, address?.toAddress(), phone)
 }
