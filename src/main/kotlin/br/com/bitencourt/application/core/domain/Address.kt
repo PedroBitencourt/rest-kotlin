@@ -6,6 +6,5 @@ data class Address(
     val street: String,
     val zipCode: String,
     val city: String,
-    val state: String,
-    val personId: Person? = null
+    val state: String
 )

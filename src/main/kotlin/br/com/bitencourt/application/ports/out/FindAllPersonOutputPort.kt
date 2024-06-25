@@ -2,7 +2,7 @@ package br.com.bitencourt.application.ports.out
 
 import br.com.bitencourt.application.core.domain.Person
 
-interface InsertPersonOutPutPort {
+interface FindAllPersonOutputPort {
 
-    fun insert(person: Person)
+    fun find(): List<Person>
 }
